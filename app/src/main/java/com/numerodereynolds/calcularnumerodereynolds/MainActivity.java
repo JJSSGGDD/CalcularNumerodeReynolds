@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         double ndiametrodelatuberia = Double.parseDouble(diametrodelatuberia.getText().toString());
         double nvelocidaddelfluido = Double.parseDouble(velocidaddelfluido.getText().toString());
         double nvelocidaddinamica = Double.parseDouble(velocidaddinamica.getText().toString());
-
-        if (diametrotuberia =[ft])
-            ;
         double resultadonumerodereynolds = ((ndensidaddelfluido * ndiametrodelatuberia * nvelocidaddelfluido) / (nvelocidaddinamica));
 
         //mostrar el resultado
