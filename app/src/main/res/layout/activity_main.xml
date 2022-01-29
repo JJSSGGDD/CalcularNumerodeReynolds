@@ -66,12 +66,12 @@
             android:ems="10"
             android:inputType="numberDecimal" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="141dp"
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="225dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="[m]" />
+            android:layout_weight="1" />
+
     </LinearLayout>
 
     <LinearLayout
