@@ -1,4 +1,4 @@
-package com.example.calcularnumerodereynolds;
+package com.numerodereynolds.calcularnumerodereynolds;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
