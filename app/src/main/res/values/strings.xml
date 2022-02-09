@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calcular Numero de Reynolds</string>
+    <string-array name="diametrotuberia">
+        <item>[ft]</item>
+        <item>[in]</item>
+        <item>[m]</item>
+        <item>[cm]</item>
+    </string-array>
 </resources>

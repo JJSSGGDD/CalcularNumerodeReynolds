@@ -4,16 +4,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText densidaddelfluido, diametrodelatuberia, velocidaddelfluido, viscosidaddinamica;
     private Button calcularnumerodereynolds, eliminardatos;
     private TextView numerodereynolds, tipodeflujo;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         eliminardatos = findViewById(R.id.btneliminardatos);
         numerodereynolds = findViewById(R.id.txtnumerodereynolds);
         tipodeflujo = findViewById(R.id.txttipodeflujo);
+        spinner = findViewById(R.id.spinner1);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.diametrotuberia, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
     }
 
     //haciendo las operaciones
@@ -67,5 +77,17 @@ public class MainActivity extends AppCompatActivity {
         viscosidaddinamica.setText("");
         numerodereynolds.setText("  Numero de Reynolds :");
         tipodeflujo.setText("  Tipo de Flujo :");
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String choice = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_LONG).show();;
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
