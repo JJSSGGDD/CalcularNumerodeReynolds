@@ -46,26 +46,34 @@ public class MainActivity extends AppCompatActivity {
             double ndiametrodelatuberia = Double.parseDouble(diametrodelatuberia.getText().toString());
             double nvelocidaddelfluido = Double.parseDouble(velocidaddelfluido.getText().toString());
             double nvelocidaddinamica = Double.parseDouble(viscosidaddinamica.getText().toString());
-            double resultadonumerodereynolds = ((ndensidaddelfluido * ndiametrodelatuberia * nvelocidaddelfluido) / (nvelocidaddinamica));
 
-            //mostrar el resultado
-            numerodereynolds.setText("  Numero de Reynolds : " + String.format("%.2f", resultadonumerodereynolds)); //"%2.f" = para solo dos decimales
+            if (nvelocidaddinamica == 0) {
+                Toast.makeText(this, "La viscosidad dinamica debe ser diferente de cero", Toast.LENGTH_SHORT).show();
+            } else {
+                double resultadonumerodereynolds = ((ndensidaddelfluido * ndiametrodelatuberia * nvelocidaddelfluido) / (nvelocidaddinamica));
 
-            if (resultadonumerodereynolds <= 2300)
-                tipodeflujo.setText("  Tipo de Flujo : Laminar");
-            else if (resultadonumerodereynolds > 2300 && resultadonumerodereynolds <= 4000)  //&& = funcion logica "y"
-                tipodeflujo.setText("  Tipo de Flujo : de Transicion");
-            else if (resultadonumerodereynolds > 4000)
-                tipodeflujo.setText("  Tipo de Flujo : Turbulento");
+                //mostrar el resultado
+                numerodereynolds.setText("  Numero de Reynolds : " + String.format("%.2f", resultadonumerodereynolds)); //"%2.f" = para solo dos decimales
+
+                if (resultadonumerodereynolds <= 2300)
+                    tipodeflujo.setText("  Tipo de Flujo : Laminar");
+                else if (resultadonumerodereynolds > 2300 && resultadonumerodereynolds <= 4000)  //&& = funcion logica "y"
+                    tipodeflujo.setText("  Tipo de Flujo : de Transicion");
+                else if (resultadonumerodereynolds > 4000)
+                    tipodeflujo.setText("  Tipo de Flujo : Turbulento");
+            }
         }
     }
 
     public void borrar(View view){
+
         densidaddelfluido.setText("");
         diametrodelatuberia.setText("");
         velocidaddelfluido.setText("");
         viscosidaddinamica.setText("");
         numerodereynolds.setText("  Numero de Reynolds :");
         tipodeflujo.setText("  Tipo de Flujo :");
+
+        Toast.makeText(this, "Datos eliminados", Toast.LENGTH_SHORT).show();
     }
 }
