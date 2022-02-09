@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Calcular Numero de Reynolds</string>
+
+    <string name="Titulo">CALCULAR NUMERO DE REYNOLDS</string>
+
+
+
+    <string name="Densidad_del_fluido">  Densidad del Fluido :</string>
+    <string name="Diametro_de_Tuberia">  Diametro de Tuberia : :</string>
+    <string name="Velocidad_del_Fluido"> Velocidad del Fluido :</string>
+    <string name="Viscosidad_Dinamica">  Viscosidad Dinamica :</string>
+
+    <string name="CALCULAR_NUMERO_DE_REYNOLDS">  CALCULAR NUMERO DE REYNOLDS </string>
+    <string name="ELIMINAR_DATOS">  ELIMINAR DATOS</string>
+
+    <string name="Numero_de_Reynolds">    Numero de Reynolds : </string>
+    <string name="Tipo_de_Flujo">    Tipo de Flujo :</string>
+
 </resources>
